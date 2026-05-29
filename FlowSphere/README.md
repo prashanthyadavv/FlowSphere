@@ -16,7 +16,7 @@ FlowSphere is a production-grade, AI-powered smart venue operating system design
 
 ```bash
 # Navigate to project
-cd flowsphere
+cd FlowSphere
 
 # Install dependencies
 npm install
@@ -32,12 +32,11 @@ http://localhost:3000
 
 ## 🎭 Live Demo Roles
 
-| Role | URL | Description |
-|---|---|---|
-| **Attendee** | `/attendee` | Navigate, order food, manage ticket, get alerts |
-| **Admin** | `/admin` | Full venue control — crowd, revenue, gates, staff |
-| **Security** | `/security` | Incident management, SOS, evacuation control |
-| **Vendor** | `/vendor` | Kitchen orders, revenue, inventory dashboard |
+| Role | URL | Demo Login | Description |
+|---|---|---|---|
+| **Attendee** | `/attendee` | `attendee@flowsphere.io` (Pwd: `Attendee@123`) | Navigate, order food, manage ticket, get alerts |
+| **Admin** | `/admin` | `admin@flowsphere.io` (Pwd: `Admin@123`) | Full venue control — crowd, revenue, gates, staff |
+| **Security** | `/security` | `security@flowsphere.io` (Pwd: `Security@123`) | Incident management, SOS, evacuation control |
 
 ---
 
@@ -99,7 +98,7 @@ http://localhost:3000
 ## 🗂️ Project Structure
 
 ```
-flowsphere/
+FlowSphere/
 ├── src/
 │   ├── app/
 │   │   ├── page.tsx                    # Landing page
@@ -120,9 +119,6 @@ flowsphere/
 │   │   ├── security/
 │   │   │   ├── layout.tsx              # Security shell
 │   │   │   └── page.tsx                # Security operations
-│   │   └── vendor/
-│   │       ├── layout.tsx              # Vendor shell
-│   │       └── page.tsx                # Vendor dashboard
 │   └── lib/
 │       └── mockData.ts                 # Simulation data engine
 └── public/
@@ -158,13 +154,7 @@ flowsphere/
 - Missing person workflow with CCTV search integration
 - Emergency broadcast button for all-staff alerting
 
-### 4. Vendor Operations
-- Kitchen queue management with order status transitions
-- Inventory tracking with low-stock warnings
-- Hourly revenue bar charts
-- Order lifecycle: preparing → ready → handed over
-
-### 5. Smart Parking & Transport
+### 4. Smart Parking & Transport
 - Real-time space availability with fill percentage
 - AI exit routing recommendations
 - Shuttle and public transport ETA tracking
@@ -331,7 +321,7 @@ Analytics [Admin]
 |---|---|
 | **AI Models** | Simulated with realistic algorithms. Real models need historical training data (~2-3 events minimum) |
 | **WebSockets** | Frontend uses simulated real-time (setInterval). Full Socket.io needs the NestJS backend running |
-| **Authentication** | Demo mode with no auth. JWT + RBAC architecture is documented and ready to implement |
+| **Authentication** | RBAC Auth implemented with `AuthGuard` using Zustand. Login system has three demo accounts. |
 | **Mobile** | Desktop-first layout. Full mobile responsiveness requires responsive CSS breakpoints |
 | **CCTV** | Placeholder UI only. Computer vision for panic detection requires hardware integration |
 | **Payment** | Pre-order UI is complete; payment gateway (Razorpay/Stripe) integration is pending |
